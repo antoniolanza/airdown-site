@@ -1,0 +1,5 @@
+﻿# Public story site — never commit product source from antoniolanza/airdown
+node_modules/
+.DS_Store
+.env
+.env.*
