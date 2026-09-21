@@ -42,27 +42,8 @@
       margin: 0 0 0.75rem;
       color: var(--rust);
     }
-    .lede { font-size: 1.125rem; color: var(--basalt); margin: 0 0 1.5rem; }
+    .lede { font-size: 1.125rem; color: var(--basalt); margin: 0 0 1rem; }
     .muted { color: var(--stone); font-size: 0.95rem; }
-    .hero {
-      display: grid;
-      gap: 0.75rem;
-      margin: 1.75rem 0 2rem;
-    }
-    .hero figure {
-      margin: 0;
-      background: var(--dust-50);
-      border: 1px solid #e8dbc3;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 8px 24px rgba(33, 26, 19, 0.08);
-    }
-    .hero img { display: block; width: 100%; height: auto; }
-    .hero figcaption {
-      padding: 0.5rem 0.75rem 0.65rem;
-      font-size: 0.8rem;
-      color: var(--stone);
-    }
     .cta {
       display: block;
       width: 100%;
@@ -79,7 +60,11 @@
       box-shadow: 0 4px 0 var(--rust);
     }
     .cta:hover { background: var(--clay-dark); }
-    form { display: grid; gap: 0.65rem; margin-top: 1rem; }
+    form.waitlist {
+      display: grid;
+      gap: 0.65rem;
+      margin: 0 0 1.75rem;
+    }
     input[type="email"] {
       width: 100%;
       padding: 0.85rem 1rem;
@@ -88,15 +73,50 @@
       background: var(--dust-50);
       font: inherit;
     }
+    ul.points { padding-left: 1.1rem; margin: 0 0 1.25rem; }
+    ul.points li { margin-bottom: 0.35rem; }
+    .hero-main {
+      margin: 0 0 0.75rem;
+      background: var(--dust-50);
+      border: 1px solid #e8dbc3;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(33, 26, 19, 0.08);
+    }
+    .hero-main img { display: block; width: 100%; height: auto; }
+    .hero-main figcaption,
+    .thumbs figcaption {
+      padding: 0.5rem 0.75rem 0.65rem;
+      font-size: 0.8rem;
+      color: var(--stone);
+    }
+    .thumbs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin: 0 0 1.5rem;
+    }
+    .thumbs figure {
+      margin: 0;
+      background: var(--dust-50);
+      border: 1px solid #e8dbc3;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .thumbs img {
+      display: block;
+      width: 100%;
+      height: 9rem;
+      object-fit: cover;
+      object-position: center top;
+    }
     .note {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       padding-top: 1rem;
       border-top: 1px solid #e8dbc3;
       font-size: 0.85rem;
       color: var(--stone);
     }
-    ul.points { padding-left: 1.1rem; margin: 0 0 1.5rem; }
-    ul.points li { margin-bottom: 0.35rem; }
   </style>
 </head>
 <body>
@@ -110,28 +130,28 @@
       <li>One-tap GPX handoff for the nav app</li>
     </ul>
 
-    <section class="hero" aria-label="Product walkthrough">
-      <figure>
-        <img src="shots/01-build.png" alt="Airdown Build intake — trip shape" width="800" height="1600" />
-        <figcaption>Build — name the corridor, tap through crew and style</figcaption>
-      </figure>
-      <figure>
-        <img src="shots/02-route-line.png" alt="Trip HQ schematic map with route line" width="800" height="1600" />
-        <figcaption>Trip HQ — schematic route line and honesty-tagged pins</figcaption>
-      </figure>
-      <figure>
-        <img src="shots/03-handoff-gpx.png" alt="Download GPX for onX" width="800" height="1600" />
-        <figcaption>Handoff — Download GPX for onX</figcaption>
-      </figure>
-    </section>
-
-    <p class="muted">Concierge MVP first — a few paid trip builds before we scale. Join the waitlist.</p>
-    <form id="waitlist" action="mailto:hello@airdown.app" method="get" enctype="text/plain">
-      <label class="muted" for="email">Email</label>
+    <form class="waitlist" id="waitlist" action="mailto:hello@airdown.app" method="get" enctype="text/plain">
+      <label class="muted" for="email">Join the waitlist</label>
       <input id="email" name="body" type="email" required placeholder="you@example.com" autocomplete="email" />
       <button class="cta" type="submit">Join the waitlist</button>
     </form>
-    <p class="note">Public story only — product source stays private. Built from the Red Rock Run / Kootenays overland workflow.</p>
+
+    <figure class="hero-main">
+      <img src="shots/02-route-line.png" alt="Trip HQ schematic map with clay route line and pin dots" width="800" height="1600" />
+      <figcaption>Trip HQ — schematic route line and honesty-tagged pins</figcaption>
+    </figure>
+    <div class="thumbs" aria-label="More product frames">
+      <figure>
+        <img src="shots/01-build.png" alt="Build intake" width="400" height="800" />
+        <figcaption>Build</figcaption>
+      </figure>
+      <figure>
+        <img src="shots/03-handoff-gpx.png" alt="Download GPX for onX" width="400" height="800" />
+        <figcaption>Handoff</figcaption>
+      </figure>
+    </div>
+
+    <p class="note">Public story only — product source stays private. Built from the Red Rock Run / Kootenays overland workflow. Waitlist email is a placeholder until we plug a real inbox.</p>
   </main>
 </body>
 </html>
