@@ -8,7 +8,7 @@ This repo is the **public story** only (marketing + waitlist). The product codeb
 
 ## What it is
 - **Build** — tap-first trip intake
-- **Trip HQ** — day cards, honesty-tagged pins, schematic route
+- **Trip HQ** — day cards, honesty-tagged pins, OpenStreetMap corridor
 - **Handoff** — one-tap GPX for onX / Gaia (waypoints with source + confidence)
 
 We never invent campsite availability. Every pin carries SOURCE · CONFIDENCE.
